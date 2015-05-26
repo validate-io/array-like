@@ -7,7 +7,7 @@ var // Expectation library:
 	chai = require( 'chai' ),
 
 	// Module to be tested:
-	lib = require( './../lib' );
+	isArrayLike = require( './../lib' );
 
 
 // VARIABLES //
@@ -21,9 +21,37 @@ var expect = chai.expect,
 describe( 'validate.io-array-like', function tests() {
 
 	it( 'should export a function', function test() {
-		expect( lib ).to.be.a( 'function' );
+		expect( isArrayLike ).to.be.a( 'function' );
 	});
 
-	it( 'should do something' );
+	it( 'should positively validate', function test() {
+		var values = [
+			[],
+			{'length': 10},
+			'beep',
+			arguments,
+			function boop( a, b, c ) {}
+		];
+
+		for ( var i = 0; i < values.length; i++ ) {
+			assert.ok( isArrayLike( values[i] ), values[i] );
+		}
+	});
+
+	it( 'should negatively validate', function test() {
+		var values = [
+			5,
+			null,
+			undefined,
+			NaN,
+			true,
+			false,
+			{}
+		];
+
+		for ( var i = 0; i < values.length; i++ ) {
+			assert.notOk( isArrayLike( values[i] ), values[i] );
+		}
+	});
 
 });

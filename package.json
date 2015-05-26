@@ -26,12 +26,22 @@
     "validate.io",
     "validate",
     "validation",
-    "validator"
+    "validator",
+    "valid",
+    "arguments",
+    "array",
+    "array like",
+    "is",
+    "isarraylike",
+    "length"
   ],
   "bugs": {
     "url": "https://github.com/validate-io/array-like/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "compute-const-max-safe-integer": "^1.0.0",
+    "validate.io-integer-primitive": "^1.0.0"
+  },
   "devDependencies": {
     "chai": "2.x.x",
     "mocha": "2.x.x",

@@ -17,18 +17,60 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 ## Usage
 
 ``` javascript
-var foo = require( 'validate.io-array-like' );
+var isArrayLike = require( 'validate.io-array-like' );
 ```
 
-#### foo( value )
+#### isArrayLike( value )
 
-What does this function do?
+Validates if a value is `array`-like.
+
+``` javascript
+var bool;
+
+bool = isArrayLike( [] );
+// returns true
+
+bool = isArrayLike( {'length':10} );
+// returns true
+```
 
 
 ## Examples
 
 ``` javascript
-var foo = require( 'validate.io-array-like' );
+var isArrayLike = require( 'validate.io-array-like' );
+
+console.log( isArrayLike( {'length':10} ) );
+// returns true
+
+console.log( isArrayLike( [] ) );
+// returns true
+
+console.log( isArrayLike( function(){} ) );
+// returns true
+
+console.log( isArrayLike( 'beep' ) );
+// returns true
+
+console.log( (function test(){
+	return isArrayLike( arguments );
+})() );
+// returns true
+
+console.log( isArrayLike( null ) );
+// returns false
+
+console.log( isArrayLike( undefined ) );
+// returns false
+
+console.log( isArrayLike( 5 ) );
+// returns false
+
+console.log( isArrayLike( true ) );
+// returns false
+
+console.log( isArrayLike( {} ) );
+// returns false
 ```
 
 To run the example code from the top-level application directory,
