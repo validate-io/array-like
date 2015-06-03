@@ -8,9 +8,6 @@ console.log( isArrayLike( {'length':10} ) );
 console.log( isArrayLike( [] ) );
 // returns true
 
-console.log( isArrayLike( function(){} ) );
-// returns true
-
 console.log( isArrayLike( 'beep' ) );
 // returns true
 
@@ -33,3 +30,7 @@ console.log( isArrayLike( true ) );
 
 console.log( isArrayLike( {} ) );
 // returns false
+
+console.log( isArrayLike( function(){} ) );
+// returns false
+

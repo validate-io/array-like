@@ -29,8 +29,7 @@ describe( 'validate.io-array-like', function tests() {
 			[],
 			{'length': 10},
 			'beep',
-			arguments,
-			function boop( a, b, c ) {}
+			arguments
 		];
 
 		for ( var i = 0; i < values.length; i++ ) {
@@ -46,7 +45,8 @@ describe( 'validate.io-array-like', function tests() {
 			NaN,
 			true,
 			false,
-			{}
+			{},
+			function boop( a, b, c ) {}
 		];
 
 		for ( var i = 0; i < values.length; i++ ) {

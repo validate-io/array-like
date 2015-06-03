@@ -22,7 +22,7 @@ var isArrayLike = require( 'validate.io-array-like' );
 
 #### isArrayLike( value )
 
-Validates if a value is `array`-like.
+Validates if a value is [`array`-like](http://www.2ality.com/2013/05/quirk-array-like-objects.html).
 
 ``` javascript
 var bool;
@@ -46,9 +46,6 @@ console.log( isArrayLike( {'length':10} ) );
 console.log( isArrayLike( [] ) );
 // returns true
 
-console.log( isArrayLike( function(){} ) );
-// returns true
-
 console.log( isArrayLike( 'beep' ) );
 // returns true
 
@@ -70,6 +67,9 @@ console.log( isArrayLike( true ) );
 // returns false
 
 console.log( isArrayLike( {} ) );
+// returns false
+
+console.log( isArrayLike( function(){} ) );
 // returns false
 ```
 
