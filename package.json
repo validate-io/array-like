@@ -39,7 +39,7 @@
     "url": "https://github.com/validate-io/array-like/issues"
   },
   "dependencies": {
-    "compute-const-max-safe-integer": "^1.0.0",
+    "const-max-uint32": "^1.0.2",
     "validate.io-integer-primitive": "^1.0.0"
   },
   "devDependencies": {
